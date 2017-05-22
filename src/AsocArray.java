@@ -16,6 +16,15 @@ private int tam;
 		this.primero=null;
 		tam =0;
 	}
+	
+	public AsocArray(String key,String value){
+		primero= new Node();
+		primero.key=key;
+		primero.value=value;
+		primero.sig= null;
+		this.tam=1;
+	}
+	
 	public int size(){
 		return tam;
 	}
