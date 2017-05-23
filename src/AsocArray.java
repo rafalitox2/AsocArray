@@ -37,4 +37,12 @@ private int tam;
 			throw new NoSuchElementException();
 		}
 	}
+
+	public void put(String key, String value) {
+		primero = new Node();
+		primero.key=key;
+		primero.value=value;
+		primero.sig=null;
+		
+	}
 }
