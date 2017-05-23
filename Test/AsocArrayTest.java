@@ -17,7 +17,7 @@ public class AsocArrayTest {
 	}
 	
 	@Test(expected = NoSuchElementException.class)
-	public void LlaveNoEncontradaArrayVacío(){
+	public void LlaveNoEncontradaArrayVacio(){
 		AsocArray a = new AsocArray();
 		String key = "key";
 		a.get("key");

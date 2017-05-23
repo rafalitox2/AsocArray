@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 
 public class AsocArray {
 	
@@ -27,5 +28,10 @@ private int tam;
 	
 	public int size(){
 		return tam;
+	}
+
+	public String get(String key) {
+			throw new NoSuchElementException();
+		
 	}
 }
