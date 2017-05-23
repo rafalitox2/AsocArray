@@ -87,5 +87,12 @@ public class AsocArrayTest {
         a.put("prueba", "Algo");
         assertEquals("nada", a.getOrElse("Absoluto", "nada"));
     }
+	
+	@Test
+	public void ContieneKeyArrayVacio() {
+        AsocArray a  = new AsocArray();
+        
+        assertFalse(a.containsKey("llave"));
+    }
 }
 
