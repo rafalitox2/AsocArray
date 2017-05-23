@@ -64,9 +64,19 @@ public class AsocArrayTest {
 	}
 	
 	@Test
-	     public void GetOrElseArrayVacío() {
+	public void GetOrElseArrayVacío() {
 	         AsocArray a = new AsocArray();
 	         
 	         assertEquals("nothing", a.getOrElse("key","nothing"));
-	     }
+     }
+	
+	@Test
+	public void GetOrElselallaveExiste(){
+		AsocArray a = new AsocArray("llave", "valor");
+		
+		assertEquals("value", a.getOrElse("llave", "auxiliar"));
+		a.put("key","prueba");
+		assertEquals("prueba", a.getOrElse("key", "auxiliar"));
+	}
 }
+
