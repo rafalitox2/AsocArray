@@ -39,17 +39,24 @@ private int tam;
 		return tam;
 	}
 
-	public String get(String key) {
+	
+	public Node buscarNodo(String key) {
 		Node aux = primero;
 		
 		while(aux!=null && aux.key.compareTo(key)!=0){
 			aux = aux.sig;
 		}
-		if (aux == null){
+		return aux;
+	}
+	
+	
+	public String get(String key) {
+		Node nodo = buscarNodo(key);
+		if (nodo == null){
 			
 			throw new NoSuchElementException();
 		}
-		return aux.value;
+		return nodo.value;
 	}
 
 	public void put(String key, String value) {
@@ -74,17 +81,16 @@ private int tam;
 		}
 	}
 
-	public String getOrElse(String key, String value) {
-		Node aux = primero;
-	
-		while(aux!=null && aux.key.compareTo(key)!=0){
-			aux = aux.sig;
-		}
-		if (aux == null){
-			return value;
+	public String getOrElse(String key, String valor) {
+		Node nodo = buscarNodo(key);
+		String value;
+		
+		if (nodo == null){
+			value = valor;
 		}else{
-			return aux.value;
+			value = nodo.value;
 		}
+		return value;
 		
 	}
 }
