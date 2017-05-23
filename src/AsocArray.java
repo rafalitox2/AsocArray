@@ -75,6 +75,16 @@ private int tam;
 	}
 
 	public String getOrElse(String key, String value) {
-		return value;
+		Node aux = primero;
+	
+		while(aux!=null && aux.key.compareTo(key)!=0){
+			aux = aux.sig;
+		}
+		if (aux == null){
+			return value;
+		}else{
+			return aux.value;
+		}
+		
 	}
 }
