@@ -94,5 +94,14 @@ public class AsocArrayTest {
         
         assertFalse(a.containsKey("llave"));
     }
+	
+	@Test
+	public void EliminarLlavedeArray(){
+		AsocArray a = new AsocArray("llave","valor");
+		a.put("prueba", "Algo");
+		int tam = a.size();
+		a.delete("llave");
+		assertEquals(tam-1,a.size());
+	}
 }
 
