@@ -4,6 +4,16 @@ public class AsocArray {
 	
 	
 	private class Node {
+		public Node(){
+			this(null,null,null);
+		}
+		
+		private Node(String key, String value, Node sig) {
+			this.key=key;
+			this.value=value;
+			this.sig=sig;
+			
+		}
 		String key;
 		String value;
 		Node sig;
@@ -13,16 +23,15 @@ public class AsocArray {
 private Node primero;
 private int tam;
 
+	
+
 	public AsocArray(){
 		this.primero=null;
 		tam =0;
 	}
 	
 	public AsocArray(String key,String value){
-		primero= new Node();
-		primero.key=key;
-		primero.value=value;
-		primero.sig= null;
+		primero = new Node(key,value,null);
 		this.tam=1;
 	}
 	
@@ -31,18 +40,32 @@ private int tam;
 	}
 
 	public String get(String key) {
-		if(primero!=null && primero.key.compareTo(key)==0){
-			return primero.value;
-		}else{
+		Node aux = primero;
+		
+		while(aux!=null && aux.key.compareTo(key)!=0){
+			aux = aux.sig;
+		}
+		if (aux == null){
+			
 			throw new NoSuchElementException();
 		}
+		return aux.value;
 	}
 
 	public void put(String key, String value) {
-		primero = new Node();
-		primero.key=key;
-		primero.value=value;
-		primero.sig=null;
+		Node aux = primero;
+		Node prev = null;
 		
+		while (aux!=null){
+			prev=aux;
+			aux=aux.sig;
+		}
+		
+		if(prev==null){
+			primero = new Node(key,value,null);
+		}else{
+			prev.sig= new Node(key,value,null);
+		}
+		tam++;
 	}
 }
