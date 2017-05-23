@@ -93,4 +93,8 @@ private int tam;
 		return value;
 		
 	}
+	
+	boolean containsKey(String llave) {
+        return false;
+    }
 }
