@@ -28,4 +28,10 @@ public class AsocArrayTest {
 		AsocArray a = new AsocArray("key","value");
 		assertEquals("value",a.get("key"));
 	}
+	
+	@Test(expected = NoSuchElementException.class)
+	public void BuscarValorDeKeySinEstarEnElArray(){
+		AsocArray a = new AsocArray ("llave","valor");
+		a.get("key");
+	}
 }
