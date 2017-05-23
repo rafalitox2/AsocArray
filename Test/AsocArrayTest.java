@@ -1,9 +1,9 @@
 import static org.junit.Assert.*;
-
+import java.util.NoSuchElementException;
 import org.junit.Test;
 
 public class AsocArrayTest {
-	
+
 	@Test
 	public void ArrayVacio(){
 		AsocArray a = new AsocArray();
@@ -14,5 +14,12 @@ public class AsocArrayTest {
 	public void ArrayNoVacio(){
 		AsocArray a = new AsocArray("key","value");
 		assertNotEquals(0, a.size());
+	}
+	
+	@Test(expected = NoSuchElementException.class)
+	public void LlaveNoEncontradaArrayVacío(){
+		AsocArray a = new AsocArray();
+		String key = "key";
+		a.get("key");
 	}
 }
