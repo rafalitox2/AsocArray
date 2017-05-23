@@ -56,16 +56,21 @@ private int tam;
 		Node aux = primero;
 		Node prev = null;
 		
-		while (aux!=null){
+		while (aux!=null && aux.key.compareTo(key)!=0){
 			prev=aux;
 			aux=aux.sig;
 		}
 		
-		if(prev==null){
-			primero = new Node(key,value,null);
+		if(aux!=null){
+			aux.value =value;
 		}else{
-			prev.sig= new Node(key,value,null);
+			if (prev == null){
+				primero = new Node(key,value,null);
+			}else{
+				prev.sig= new Node(key,value,null);
+		
+			}
+			tam++;
 		}
-		tam++;
 	}
 }
