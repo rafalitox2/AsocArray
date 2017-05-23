@@ -41,4 +41,13 @@ public class AsocArrayTest {
 		a.put("key","value");
 		assertEquals("value", a.get("key"));
 	}
+	
+	@Test
+	public void insertarParEnArrayNoVacio(){
+		AsocArray a = new AsocArray("llave","valor");
+		
+		a.put("key", "value");
+		assertEquals("valor", a.get("llave"));
+		assertEquals("value",a.get("key"));
+	}
 }
