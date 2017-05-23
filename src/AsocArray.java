@@ -73,4 +73,8 @@ private int tam;
 			tam++;
 		}
 	}
+
+	public String getOrElse(String key, String value) {
+		return value;
+	}
 }
