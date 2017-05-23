@@ -97,4 +97,20 @@ private int tam;
 	boolean containsKey(String llave) {
         return false;
     }
+
+	public void delete(String llave) {
+		Node aux = primero;
+		Node prev = null;
+		
+		while (aux!=null && aux.key.compareTo(llave)!=0){
+			prev=aux;
+			aux=aux.sig;
+		}
+		if (aux!=null){
+			prev=aux.sig;
+			tam--;
+		}else{
+			
+		}
+	}
 }
