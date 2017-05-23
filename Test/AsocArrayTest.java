@@ -22,4 +22,9 @@ public class AsocArrayTest {
 		String key = "key";
 		a.get("key");
 	}
+	
+	public void BuscarValorLlaveEnArray(){
+		AsocArray a = new AsocArray("key","value");
+		assertEquals("value",a.get("key"));
+	}
 }
