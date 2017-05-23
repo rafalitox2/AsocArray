@@ -52,4 +52,14 @@ public class AsocArrayTest {
 		assertEquals("value",a.get("key"));
 		assertEquals(tam+1,a.size());
 	}
+	
+	@Test
+	public void insertarParModificandoValor(){
+		AsocArray a = new AsocArray("llave","valor");
+		int tam = a.size();
+		
+		a.put("llave", "nuevoValor");
+		assertEquals("nuevoValor", a.get("llave"));
+		assertEquals(tam,a.size());
+	}
 }
