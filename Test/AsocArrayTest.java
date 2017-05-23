@@ -23,6 +23,7 @@ public class AsocArrayTest {
 		a.get("key");
 	}
 	
+	@Test
 	public void BuscarValorLlaveEnArray(){
 		AsocArray a = new AsocArray("key","value");
 		assertEquals("value",a.get("key"));

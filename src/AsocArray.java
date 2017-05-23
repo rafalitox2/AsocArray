@@ -31,7 +31,10 @@ private int tam;
 	}
 
 	public String get(String key) {
+		if(primero!=null && primero.key.compareTo(key)==0){
+			return primero.value;
+		}else{
 			throw new NoSuchElementException();
-		
+		}
 	}
 }
